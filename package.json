@@ -1,0 +1,15 @@
+{
+  "name": "swagskateshop-api",
+  "version": "1.0.0",
+  "description": "backend system for swagskateshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "swag-api",
+    "swagskateshop"
+  ],
+  "author": "Jack Rigan",
+  "license": "ISC"
+}
