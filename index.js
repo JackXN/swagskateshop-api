@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const cors = require('cors');
+const productRoute = require('./routes/product');
 
-const PORT = 5000;
-const DB_URL = 'mongodb+srv://jackxn:Noseblunt420!@cluster0.ksnood6.mongodb.net/test'
+
+const PORT = 2000;
+const DB_URL = process.env.DB_URL;
 
 mongoose.connect(DB_URL).then(() => {
     console.log('access to database is granted')
@@ -16,6 +18,8 @@ mongoose.connect(DB_URL).then(() => {
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/products', productRoute);
 
 
-app.listen(process.env.PORT || 5000,  () => console.log(`Backend server is running on PORT ${PORT}`))
+
+app.listen(PORT || 5000 ,  () => console.log(`Backend server is running on PORT ${PORT}`))
